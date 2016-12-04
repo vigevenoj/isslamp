@@ -46,6 +46,7 @@ class IssAlarmLight
       next_risetime = open_notify_response['response'][0]['risetime']
       next_duration = open_notify_response['response'][0]['duration']
 
+      # This is in gmt but for consistency should be local time
       puts "next risetime is #{DateTime.strptime(next_risetime.to_s, '%s')}"
       puts "and will last for #{next_duration} seconds"
       # so we should schedule our next check for next_risetime + next_duration (seconds)
