@@ -28,7 +28,9 @@ class IssAlarmLight
     @sched.in duration do
       @light.set_state( { :on => false })
     end
-    request_pass_update
+    @sched.in duration do
+      request_pass_update
+    end
   end
 
   ##
