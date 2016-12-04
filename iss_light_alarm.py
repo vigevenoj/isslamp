@@ -77,7 +77,7 @@ class IssLightAlarm():
                 dt, next_duration))
             self._scheduler.add_job(self.run_light_sequence,
                                     'date', run_date=dt,
-                                    args={next_duration})
+                                    args=[next_duration])
 
 
 if __name__ == '__main__':
