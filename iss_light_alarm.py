@@ -71,12 +71,13 @@ class IssLightAlarm():
         if (api_response['message'] == "success"):
             next_risetime = api_response['response'][0]['risetime']
             next_duration = api_response['response'][0]['duration']
+            # dt is local time, not gmt
+            dt = datetime.fromtimestamp(next_risetime)
             print("Next ISS overflight at {0}, lasting {1} seconds".format(
-                datetime.fromtimestamp(next_risetime), next_duration))
-            self._scheduler.add_job(self.run_light_sequence(next_duration),
-                                    'date',
-                                    run_date=datetime.fromtimestamp(
-                                        next_risetime))
+                dt, next_duration))
+            self._scheduler.add_job(self.run_light_sequence,
+                                    'date', run_date=dt,
+                                    args={next_duration})
 
 
 if __name__ == '__main__':
