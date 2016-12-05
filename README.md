@@ -24,12 +24,12 @@ Getting Started
 
 python
 ------
-Set up Philips Hue python integration via phue
-Configure the yaml file to include your location and Hue ip
-Run the python script
+* Set up Philips Hue python integration via phue
+* Configure the yaml file to include your location and Hue ip
+* Run the python script
 
 ruby
 ----
-Set up Philips Hue ruby integration with the `hue` gem
-Configure the yaml file to include your location and Hue ip
-Run the ruby script
+* Set up Philips Hue ruby integration with the `hue` gem
+* Configure the yaml file to include your location and Hue ip
+* Run the ruby script
