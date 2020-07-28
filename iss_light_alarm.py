@@ -16,7 +16,7 @@ class IssLightAlarm():
     def __init__(self, config='./iss_light_alarm.yaml'):
         try:
             with open(config, 'r') as fptr:
-                configs = yaml.load(fptr.read())
+                configs = yaml.load(fptr.read(), yaml.SafeLoader)
                 self._latitude = configs['location']['latitude']
                 self._longitude = configs['location']['longitude']
                 self._bridge_ip = configs['hue']['bridgeip']
